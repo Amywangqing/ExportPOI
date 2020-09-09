@@ -1,0 +1,27 @@
+#端口配置
+server:
+  port: 9001
+#jdbc配置
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test_user?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: wangqing
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+#mybatis配置
+mybatis:
+#实体类所在包名
+  type-aliases-package: com.qingfeng.pojo
+
+#通用mapper配置
+mapper:
+#公用通用Mapper接口类路径,(公用通用接口MyMapper<T>要单独的存在另一个包和普通dao分开，以免启动类的@MapperScan扫描到会报错)
+  mappers: com.qingfeng.my.mapper.MyMapper
+  not-empty: false
+  identity: MYSQL
+
